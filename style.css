@@ -1,0 +1,32 @@
+:root {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0 256px;
+  background-color: #eee;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.title, .author {
+  margin: 0;
+  color: #222;
+}
+
+.num-pages, .is-read {
+  color: #333;
+}
