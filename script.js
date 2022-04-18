@@ -56,6 +56,9 @@ function closeForm() {
 
 newBookBtn.addEventListener('click', displayNewBookForm);
 closeBtn.addEventListener('click', closeForm);
+formWrapper.addEventListener('click', (e) => {
+  if (e.target == formWrapper) closeForm();
+})
 
 const book1 = new Book("Test Book", "John E. Doe", 365, true);
 const book2 = new Book("Best Took2", "Dohn E. Joe", 300, false);
