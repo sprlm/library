@@ -1,6 +1,9 @@
 let myLibrary = [];
 
 const cardContainer = document.querySelector('.card-container');
+const newBookBtn = document.querySelector('.new-book-btn');
+const closeBtn = document.querySelector('.close-btn');
+const formWrapper = document.querySelector('.form-wrapper');
 
 function Book(title, author, numPages, isRead) {
   this.title = title;
@@ -41,6 +44,18 @@ function displayBooks() {
     cardContainer.appendChild(card);
   });
 }
+
+function displayNewBookForm() {
+  formWrapper.style.display = 'flex';
+  console.log('test');
+}
+
+function closeForm() {
+  formWrapper.style.display = 'none';
+}
+
+newBookBtn.addEventListener('click', displayNewBookForm);
+closeBtn.addEventListener('click', closeForm);
 
 const book1 = new Book("Test Book", "John E. Doe", 365, true);
 const book2 = new Book("Best Took2", "Dohn E. Joe", 300, false);

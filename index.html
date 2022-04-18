@@ -14,10 +14,45 @@
 <body>
   <div class="header">
     <h1>My Library</h1>
-    <button class="btn">
+    <button class="btn new-book-btn" type="button">
       <h2>+ New Book</h2>
     </button>
   </div>
+  
   <div class="card-container"></div>
+
+  <div class="form-wrapper">
+    <div class="form-container">
+      <form class="add-book-form">
+        <h1 class="form-header">Add a Book</h1>
+
+        <div>
+          <label for="title" class="form-label">Title</label>
+          <input class="form-input" type="text" name="title" id="title">
+        </div>
+
+        <div>
+          <label for="author" class="form-label">Author</label>
+          <input class="form-input" type="text" name="author" id="author">
+        </div>
+
+        <div>
+          <label for="num-pages" class="form-label">Number of Pages</label>
+          <input class="form-input" type="tel" name="num-pages" id="num-pages">
+        </div>
+
+        <div>
+          <input type="checkbox" name="is-read" id="is-read">
+          <label for="is-read">Read?</label>
+        </div>
+
+        <button class="btn form-btn" type="button">
+          <h2>Add</h2>
+        </button>
+
+        <div class="close-btn">✕</div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
