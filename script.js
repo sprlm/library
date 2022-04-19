@@ -1,4 +1,5 @@
 let myLibrary = [];
+let cardId = 0;
 
 const cardContainer = document.querySelector('.card-container');
 const formWrapper = document.querySelector('.form-wrapper');
@@ -14,6 +15,14 @@ function Book(title, author, numPages, isRead) {
   this.author = author;
   this.numPages = numPages;
   this.isRead = isRead;
+}
+
+function getElementIndex(node) {
+  let index = 0;
+  while (node = node.previousElementSibling) {
+    index++;
+  }
+  return index;
 }
 
 function addBookToLibrary(book) {
@@ -43,6 +52,17 @@ function addBookToDOM(book) {
   isRead.classList.add('is-read');
   isRead.textContent = (book.isRead) ? 'Read!' : 'Not read.';
   card.appendChild(isRead);
+
+  const close = document.createElement('div');
+  close.classList.add('close-btn');
+  close.textContent = '✕';
+  close.addEventListener('click', (e) => {
+    const cardToDelete = e.target.parentElement;
+    const cardIndex = getElementIndex(cardToDelete);
+    myLibrary.splice(cardIndex, 1);
+    displayBooks();
+  });
+  card.appendChild(close);
 
   cardContainer.appendChild(card);
 }
