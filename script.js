@@ -17,6 +17,10 @@ function Book(title, author, numPages, isRead) {
   this.isRead = isRead;
 }
 
+Book.prototype.changeReadStatus = function() {
+  this.isRead = !this.isRead;
+};
+
 function getElementIndex(node) {
   let index = 0;
   while (node = node.previousElementSibling) {
@@ -51,6 +55,11 @@ function addBookToDOM(book) {
   const isRead = document.createElement('div');
   isRead.classList.add('is-read');
   isRead.textContent = (book.isRead) ? 'Read!' : 'Not read.';
+  isRead.addEventListener('click', (e) => {
+    const bookIndex = getElementIndex(e.target.parentElement);
+    myLibrary[bookIndex].changeReadStatus();
+    displayBooks();
+  })
   card.appendChild(isRead);
 
   const close = document.createElement('div');

@@ -26,7 +26,7 @@ body {
   transition: 0.3s;
 }
 
-.btn:hover {
+.btn:hover, .is-read:hover {
   background-color: #0f66f3;
 }
 
@@ -54,6 +54,20 @@ body {
 
 .num-pages, .is-read {
   color: #333;
+}
+
+.is-read {
+  display: inline-block;
+  width: 80px;
+  border-radius: 32px;
+  margin-top: 8px;
+  padding: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: var(--main-color);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .form-wrapper {
