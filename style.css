@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  padding: 0 15%;
+  padding: 0 15% 32px;
   background-color: #eee;
 }
 
@@ -99,8 +99,8 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 16px;
+  right: 16px;
   color: #666;
   cursor: pointer;
   font-size: 1.4rem;
