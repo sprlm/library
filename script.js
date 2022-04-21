@@ -10,16 +10,18 @@ const closeBtn = document.querySelector('.close-btn');
 
 const addBookForm = document.querySelector('.add-book-form');
 
-function Book(title, author, numPages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.numPages = numPages;
-  this.isRead = isRead;
-}
+class Book {
+  constructor(title, author, numPages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.numPages = numPages;
+    this.isRead = isRead;
+  }
 
-Book.prototype.changeReadStatus = function() {
-  this.isRead = !this.isRead;
-};
+  changeReadStatus() {
+    this.isRead = !this.isRead;
+  }
+}
 
 function getElementIndex(node) {
   let index = 0;
