@@ -112,13 +112,17 @@ function getBookFromForm() {
 newBookBtn.addEventListener('click', displayNewBookForm);
 
 addBtn.addEventListener('click', () => {
-  const book = getBookFromForm();
+  if (addBookForm.checkValidity()) {
+    const book = getBookFromForm();
 
-  addBookToLibrary(book);
-  displayBooks();
+    addBookToLibrary(book);
+    displayBooks();
 
-  addBookForm.reset();
-  closeForm();
+    addBookForm.reset();
+    closeForm();
+  } else {
+    addBookForm.reportValidity();
+  }
 });
 
 closeBtn.addEventListener('click', closeForm);
